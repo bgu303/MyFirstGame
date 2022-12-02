@@ -7,6 +7,8 @@ using TMPro;
 public class SliderScripts : MonoBehaviour
 {
 
+    // test
+
     PlayerMovement playerMovement;
     public GameObject player;
     public Slider speedSlider;
