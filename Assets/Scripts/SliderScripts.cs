@@ -18,10 +18,7 @@ public class SliderScripts : MonoBehaviour
         playerMovement = player.GetComponent<PlayerMovement>();
         sliderText1.text = playerMovement.speed.ToString();
         sliderText2.text = playerMovement.jumpAmount.ToString();
-    }
-
-    void Update()
-    {
+        
         speedSlider.onValueChanged.AddListener((value) =>
         {
             playerMovement.speed = value;
@@ -35,5 +32,10 @@ public class SliderScripts : MonoBehaviour
             sliderText2.text = value.ToString();
             PlayerPrefs.SetFloat("jumpamount", value);
         });
+    }
+
+    void Update()
+    {
+
     }
 }

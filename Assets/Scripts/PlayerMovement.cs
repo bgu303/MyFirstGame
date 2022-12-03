@@ -44,7 +44,6 @@ public class PlayerMovement : MonoBehaviour
             jumpAmount = 10;
         }
 
-
         if (Input.GetKeyDown("space") && isJumping == false)
         {
             rigidBody.AddForce(Vector2.up * jumpAmount, ForceMode2D.Impulse);
