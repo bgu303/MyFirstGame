@@ -16,10 +16,8 @@ public class EnemyMovement : MonoBehaviour
         rigidBody = GetComponent<Rigidbody2D>();
     }
 
-
     void FixedUpdate()
     {
-
         if (dirRight)
         {
             rigidBody.velocity = new Vector2(movementSpeed * Time.fixedDeltaTime, rigidBody.velocity.y);
@@ -38,7 +36,6 @@ public class EnemyMovement : MonoBehaviour
         {
             dirRight = true;
         }
-
     }
 
     private void OnCollisionEnter2D(Collision2D other) {

@@ -11,10 +11,8 @@ public class FloorDeletion : MonoBehaviour
         rigidBody = GetComponent<Rigidbody2D>();
     }
 
-    
     void Update()
     {
-
         if (transform.position.x < ScreenBounds.getScreenBounds().x - 30) {
             Destroy(gameObject);
         }

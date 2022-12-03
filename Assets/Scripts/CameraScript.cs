@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class CameraScript : MonoBehaviour
 {
-    
     public GameObject target;
     public float speed = 3.0f;
 

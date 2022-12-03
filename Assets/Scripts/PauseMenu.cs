@@ -29,10 +29,6 @@ public class PauseMenu : MonoBehaviour
         // audioSource.Pause();
     }
 
-    public void SetSettings() {
-        Debug.Log("Toimii settings");
-    }
-
     public void ExitGame() {
         Debug.Log("Toimii exit");
         Application.Quit();

@@ -35,6 +35,7 @@ public class PlayerMovement : MonoBehaviour
         {
             speed = 400;
         }
+
         if (PlayerPrefs.HasKey("jumpamount"))
         {
             jumpAmount = PlayerPrefs.GetFloat("jumpamount");
@@ -81,6 +82,5 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         rigidBody.velocity = new Vector2(speed * Move * Time.fixedDeltaTime, rigidBody.velocity.y);
-
     }
 }

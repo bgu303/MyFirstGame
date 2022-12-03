@@ -11,7 +11,6 @@ public class FloorCreation : MonoBehaviour
 
     void Start()
     {
-
         StartCoroutine(floorSpawning());
     }
 
@@ -22,7 +21,6 @@ public class FloorCreation : MonoBehaviour
             yield return new WaitForSeconds(Random.Range(2.0f, 2.6f));
             spawnFloor();
         }
-
     }
 
     void Update()
@@ -48,6 +46,5 @@ public class FloorCreation : MonoBehaviour
             GameObject floor3 = Instantiate(floorPrefab3);
             floor3.transform.position = new Vector2(ScreenBounds.getScreenBounds().x + 4, Random.Range(ScreenBounds.getScreenBounds().y - 4, ScreenBounds.getScreenBounds().y - 6));
         }
-
     }
 }

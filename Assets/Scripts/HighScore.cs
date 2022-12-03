@@ -8,7 +8,6 @@ public class HighScore : MonoBehaviour
 {
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI highScoreText;
-
     private float score;
 
     void Start()
@@ -16,10 +15,8 @@ public class HighScore : MonoBehaviour
         highScoreText.text = "High score: " + PlayerPrefs.GetFloat("highscore");
     }
 
-
     void Update()
     {
-
         if (Time.timeScale != 0.0f)
         {
             CheckHighScore();
