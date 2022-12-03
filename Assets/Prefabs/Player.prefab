@@ -47,10 +47,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f8d08c22bedd124dbffd18102c58880, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 7
+  speed: 400
   jumpAmount: 10
   isJumping: 0
-  start: {fileID: 0}
   Player: {fileID: 1130492800095082223}
   animator: {fileID: 1130492800449607307}
 --- !u!50 &1130492800095082219

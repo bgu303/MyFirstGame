@@ -6,9 +6,6 @@ using TMPro;
 
 public class SliderScripts : MonoBehaviour
 {
-
-    // test
-
     PlayerMovement playerMovement;
     public GameObject player;
     public Slider speedSlider;
@@ -19,8 +16,9 @@ public class SliderScripts : MonoBehaviour
     void Start()
     {
         playerMovement = player.GetComponent<PlayerMovement>();
+        sliderText1.text = playerMovement.speed.ToString();
+        sliderText2.text = playerMovement.jumpAmount.ToString();
     }
-
 
     void Update()
     {
@@ -28,11 +26,14 @@ public class SliderScripts : MonoBehaviour
         {
             playerMovement.speed = value;
             sliderText1.text = value.ToString();
+            PlayerPrefs.SetFloat("playerspeed", value);
         });
+        
         jumpSlider.onValueChanged.AddListener((value) =>
         {
             playerMovement.jumpAmount = value;
             sliderText2.text = value.ToString();
+            PlayerPrefs.SetFloat("jumpamount", value);
         });
     }
 }

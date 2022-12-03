@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rigidBody;
     private BoxCollider2D boxCollider;
     public Animator animator;
-    
+
     void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
@@ -27,29 +27,54 @@ public class PlayerMovement : MonoBehaviour
     {
         Move = Input.GetAxis("Horizontal");
 
-        if (Input.GetKeyDown("space") && isJumping == false) {
+        if (PlayerPrefs.HasKey("playerspeed"))
+        {
+            speed = PlayerPrefs.GetFloat("playerspeed");
+        }
+        else
+        {
+            speed = 400;
+        }
+        if (PlayerPrefs.HasKey("jumpamount"))
+        {
+            jumpAmount = PlayerPrefs.GetFloat("jumpamount");
+        }
+        else
+        {
+            jumpAmount = 10;
+        }
+
+
+        if (Input.GetKeyDown("space") && isJumping == false)
+        {
             rigidBody.AddForce(Vector2.up * jumpAmount, ForceMode2D.Impulse);
             animator.SetBool("Idle", false);
         }
 
-        if (Input.GetKeyDown(KeyCode.RightArrow)) {
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
             transform.localRotation = Quaternion.Euler(0, 0, 0);
         }
-        
-        if (Input.GetKeyDown(KeyCode.LeftArrow)) {
+
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
             transform.localRotation = Quaternion.Euler(0, -180, 0);
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D other) {
-        if(other.gameObject.CompareTag("Floor")) {
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Floor"))
+        {
             isJumping = false;
             animator.SetBool("Idle", true);
         }
     }
 
-    private void OnCollisionExit2D(Collision2D other) {
-        if(other.gameObject.CompareTag("Floor")) {
+    private void OnCollisionExit2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Floor"))
+        {
             isJumping = true;
         }
     }
@@ -57,6 +82,6 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         rigidBody.velocity = new Vector2(speed * Move * Time.fixedDeltaTime, rigidBody.velocity.y);
-        
+
     }
 }

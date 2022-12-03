@@ -14,21 +14,19 @@ public class PauseMenu : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
-
     void Update()
     {
         if (Input.GetKeyDown("escape") && Time.timeScale == 1.0f || Input.GetKeyDown(KeyCode.P) && Time.timeScale == 1.0f) {
-            Debug.Log(Time.timeScale);
             Time.timeScale = 0.0f;
             pauseMenu.SetActive(true);
-            audioSource.Play();
+            // audioSource.Play();
         }
     }
 
     public void ContinueGame() {
         Time.timeScale = 1.0f;
         pauseMenu.SetActive(false);
-        audioSource.Pause();
+        // audioSource.Pause();
     }
 
     public void SetSettings() {
