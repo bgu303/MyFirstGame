@@ -31,11 +31,13 @@ public class SliderScripts : MonoBehaviour
             playerMovement.jumpAmount = value;
             sliderText2.text = value.ToString();
             PlayerPrefs.SetFloat("jumpamount", value);
+            jumpSlider.value = value;
         });
     }
 
     void Update()
     {
-
+        speedSlider.value = playerMovement.speed;
+        jumpSlider.value = playerMovement.jumpAmount;
     }
 }
